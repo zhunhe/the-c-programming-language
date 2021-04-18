@@ -7,9 +7,9 @@ int	is_blank(char c)
 
 int	main(void)
 {
-	char	c;
-	char	c_before = 0;
-	int		wd_cnt = 0;
+	char c;
+	char c_before = 0;
+	int wd_cnt = 0;
 
 	while (EOF != (c = getchar()))
 	{

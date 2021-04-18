@@ -4,9 +4,9 @@
 
 int	main(void)
 {
-	char	c;
-	char	c_before = 0;
-	int		print_space = 1;
+	char c;
+	char c_before = 0;
+	int print_space = 1;
 	
 	while (EOF != (c = getchar()))
 	{

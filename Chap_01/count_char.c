@@ -1,15 +1,15 @@
 #include <stdio.h>
 
 #define TAB_CHAR		'\t'
-#define LINEFEED_CHAR	'\n'
+#define LINEFEED_CHAR		'\n'
 #define SPACE_CHAR		' '
 
 int	main(void)
 {
-	char	c;
-	int		cnt_tab = 0;
-	int		cnt_ln = 0;
-	int		cnt_space = 0;
+	char c;
+	int cnt_tab = 0;
+	int cnt_ln = 0;
+	int cnt_space = 0;
 	
 	while (EOF != (c = getchar()))
 	{
