@@ -24,7 +24,7 @@ int	main(void)
 		}
 		c_before = c;
 	}
-	for (int idx = 0; idx < 20; idx++)
+	for (int idx = 1; idx < 20; idx++)
 		printf("table[%d]: %d\n", idx, word_len_table[idx]);
 	return (0);
 }
