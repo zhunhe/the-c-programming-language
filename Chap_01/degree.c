@@ -1,6 +1,8 @@
 /*
 ** Fahrenheit degree to Celsius degree
 ** °C = (°F - 32) * 5 / 9
+** Celsius degree to Fahrenheit degree
+** °F = °C * 9 / 5 + 32
 */
 
 #include <stdio.h>
@@ -10,6 +12,11 @@
 double	fahr_to_celsius(double fahr)
 {
 	return (((fahr - 32) * 5.0 / 9.0));
+}
+
+double	celsius_to_fahr(double celsius)
+{
+	return (celsius * 9.0 / 5.0 + 32);
 }
 
 int		main(void)
@@ -33,7 +40,8 @@ int		main(void)
 		{300, 148}};
 	
 	for (int idx = 0; idx < DEGREE_TABLE_MAX; idx++)
-		printf("fahr: %3.0f, fahr_to_celsius(): %6.1f\n"
-				, degree[idx][0], fahr_to_celsius((double)degree[idx][0]));
+		printf("fahr: %3.0f, fahr_to_celsius(): %6.1f\n", degree[idx][0], fahr_to_celsius((double)degree[idx][0]));
+	for (int idx = 0; idx < DEGREE_TABLE_MAX; idx++)
+		printf("celsius: %3.0f, celsius_to_fahr(): %6.1f\n", degree[idx][1], celsius_to_fahr((double)degree[idx][1]));
 	return (0);
 }
