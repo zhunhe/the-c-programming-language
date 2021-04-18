@@ -9,7 +9,7 @@
 
 double	fahr_to_celsius(double fahr)
 {
-	return ((int)((fahr - 32) * 5.0 / 9.0));
+	return (((fahr - 32) * 5.0 / 9.0));
 }
 
 int		main(void)
@@ -33,7 +33,7 @@ int		main(void)
 		{300, 148}};
 	
 	for (int idx = 0; idx < DEGREE_TABLE_MAX; idx++)
-		printf("fahr: %3.0f, fahr_to_celsius(): %5.1f, celsius: %5.1f\n"
-				, degree[idx][0], fahr_to_celsius((double)degree[idx][0]), degree[idx][1]);
+		printf("fahr: %3.0f, fahr_to_celsius(): %6.1f\n"
+				, degree[idx][0], fahr_to_celsius((double)degree[idx][0]));
 	return (0);
 }
