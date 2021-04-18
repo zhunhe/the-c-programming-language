@@ -1,12 +1,17 @@
 #include <stdio.h>
 
+#define CHAR_FIND		'\t'
+
 int	main(void)
 {
-	double	nc;
-
-	nc = 0;
-	for (nc = 0; getchar() != EOF; ++nc)
-		;
-	printf("nc: %.0f\n", nc);
+	char	c;
+	int		cnt = 0;
+	
+	while (EOF != (c = getchar()))
+	{
+		if (c == CHAR_FIND)
+			++cnt;
+	}
+	printf("cnt: %d\n", cnt);
 	return (0);
 }
