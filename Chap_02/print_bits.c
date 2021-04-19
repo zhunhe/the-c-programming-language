@@ -4,7 +4,6 @@
 
 void	print_bits(unsigned int n)
 {
-	unsigned int print = 0;
 	unsigned int div = 1 << 31;
 
 	while (div > 0)
