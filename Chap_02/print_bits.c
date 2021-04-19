@@ -4,8 +4,10 @@
 
 void	print_bits(unsigned int n)
 {
-	unsigned int div = 1 << 31;
+	unsigned int div = 1;
 
+	while (div <= n / 2)
+		div = div << 1;
 	while (div > 0)
 	{
 		if (n & div)
@@ -16,7 +18,7 @@ void	print_bits(unsigned int n)
 	}
 }
 
-unsigned int	atou(char *s)
+unsigned int	ft_atou(char *s)
 {
 	unsigned int value = 0;
 	while (*s)
@@ -27,7 +29,7 @@ unsigned int	atou(char *s)
 int	main(int argc, char **argv)
 {
 	if (argc == 2)
-		print_bits(atou(argv[1]));
+		print_bits(ft_atou(argv[1]));
 	else
 		print_bits(UINT_MAX);
 	return (0);
