@@ -2,7 +2,7 @@
 
 int	ft_atoi(char *s)
 {
-	int	value = 0;
+	int value = 0;
 
 	if (!*s)
 		return (-1);
