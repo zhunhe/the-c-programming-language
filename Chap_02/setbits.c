@@ -13,12 +13,23 @@ unsigned	getbits(unsigned x, int p, int n)
 	return ((x >> (p + 1 - n)) & ~(~0 << n));
 }
 
+unsigned	set_0_bits(unsigned x, int p, int n)
+{
+	unsigned ret = x;
+	unsigned zero_bit = 0;
+	
+	for (int idx = 0; idx < n; idx++)
+		zero_bit = (zero_bit << 1) + 1;
+	zero_bit = ~(zero_bit << (p - 1));
+	return (ret & zero_bit);
+}
+
 unsigned	setbits(unsigned x, int p, int n, int y)
 {
 	unsigned ret = x;
 
 	// 1. make 0 n bits begin at p of x
-	ret = (ret << n) >> n;
+	ret = set_0_bits(x, p, n);
 	// 2. set n bits of x from rightmost n bits of y
 	ret = ret | (getbits(y, n - 1, n) << (p - n + 1));
 	return (ret);
