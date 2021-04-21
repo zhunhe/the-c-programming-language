@@ -1,6 +1,7 @@
 #include <ctype.h>
 #include <stdio.h>
 #include <limits.h>
+#include <string.h>
 
 #define ERROR		-1
 
@@ -34,7 +35,9 @@ int	main(int argc, char **argv)
 
 	if (argc == 2)
 	{
-		if (ERROR != (result = atoi(argv[1])))
+		if (-1 == atoi(argv[1]))
+			printf("%d\n", -1);
+		else if (ERROR != (result = atoi(argv[1])))
 			printf("%d\n", atoi(argv[1]));
 	}
 	else
