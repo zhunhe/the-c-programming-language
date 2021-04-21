@@ -15,7 +15,7 @@ void	escape(char *src, char *dst)
 
 	while (*src)
 	{
-		if (*src > 126 || *src < 32) // printable char
+		if (*src > 126 || *src < 32) // not printable char
 			continue;
 		switch (*src)
 		{
