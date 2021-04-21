@@ -20,7 +20,7 @@ void	reverse(char *s)
 	char tmp;
 
 	int j = strlen(s) - 1;
-	for (int i = 0; i < j; ++i, --j)
+	for (int i = 0; i < j; i++, j--)
 	{
 		tmp = s[i];
 		s[i] = s[j];
@@ -39,8 +39,8 @@ void	itoa(char *s, int n)
 	do {
 		s[idx++] = n_tmp % 10 + '0';
 	} while ((n_tmp /= 10) > 0);
-	s[idx] = sign < 0 ? '-' : '\0';
-	s[++idx] = '\0';
+	s[idx++] = sign < 0 ? '-' : '\0';
+	s[idx] = '\0';
 	reverse(s);
 }
 
