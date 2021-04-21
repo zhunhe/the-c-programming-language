@@ -42,23 +42,29 @@ void	expand(char *src, char *dst)
 {
 	char start = 0;
 	char end = 0;
-	int idx = 0;
+	int src_idx = 0;
+	int dst_idx = 0;
 
-	while (src[idx])
+	while (src[src_idx])
 	{
-		if (isvalid(src[idx]))
+		if (isvalid(src[src_idx]))
 		{
-			set_data(&start, &end, src, idx);
+			set_data(&start, &end, src, src_idx);
 			if (start < end)
 			{
 				while (start <= end)
-					*(dst++) = start++;
-				reset_data(&start, &end, src, idx);
+				{
+					if (isvalid(start)
+					&& ((!dst_idx) || (dst_idx && dst[dst_idx - 1] != start)))
+						dst[dst_idx++] = start;
+					start++;
+				}
+				reset_data(&start, &end, src, src_idx);
 			}
 		}
-		idx++;
+		src_idx++;
 	}
-	*dst = 0;
+	dst[dst_idx] = 0;
 }
 
 int	main(int argc, char **argv)
