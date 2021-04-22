@@ -1,8 +1,19 @@
 #include <stdio.h>
-#ifdef getline
-#endif
 
 #define MAXLINE		100
+
+int ft_getline(char *line, int max);
+
+/* rudimentary calculator */
+int	main(void)
+{
+	double sum, atof(char[]);
+	char line[MAXLINE];
+	sum = 0;
+	while (ft_getline(line, MAXLINE) > 0)
+		printf("\t%lf\n", sum += atof(line));
+	return (0);
+}
 
 int ft_getline(char *line, int max)
 {
@@ -17,15 +28,4 @@ int ft_getline(char *line, int max)
 		line[i++] = c;
 	line[i] = '\0';
 	return (i);
-}
-
-/* rudimentary calculator */
-int	main(void)
-{
-	double sum, atof(char[]);
-	char line[MAXLINE];
-	sum = 0;
-	while (ft_getline(line, MAXLINE) > 0)
-		printf("\t%lf\n", sum += atof(line));
-	return (0);
 }
