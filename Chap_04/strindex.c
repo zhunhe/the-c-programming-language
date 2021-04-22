@@ -1,3 +1,9 @@
+/*
+** Exercise 4-1.
+** Write the function strindex(s,t)
+** which returns the position of the rightmost occurrence of t in s, or -1 if there is none.
+*/
+
 #include <stdio.h>
 #define MAXLINE		1000
 #define PATTERN		"ould"
@@ -8,8 +14,9 @@ int strindex(char *src, char *searchfor);
 int	main(void)
 {
 	char line[MAXLINE];
-	int found = 0;
+	int found;
 
+	found = 0;
 	while (ft_getline(line, MAXLINE) > 0)
 	{
 		if (strindex(line, PATTERN) >= 0)
@@ -39,8 +46,13 @@ int ft_getline(char *line, int max)
 int strindex(char *src, char *searchfor)
 {
 	int i, j, k;
+	int len;
 
-	for (i = 0; src[i] != '\0'; i++)
+	len = 0;
+	i = 0;
+	while (src[i++])
+		++len;
+	for (i = len; i >= 0; --i)
 	{
 		for (j = i, k = 0
 			; searchfor[k] != '\0' && src[j] == searchfor[k]
